@@ -1,0 +1,136 @@
+.footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 69px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #202020;
+}
+
+.footer__project {
+  margin: 0 auto;
+  width: 89%;
+  color: #8B8B8B;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 20px;
+}
+
+.footer__copyright {
+  display: flex;
+  width: 29%;
+  margin: 20px 0;
+  color: #FFF;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer__partners {
+  width: 60%;
+  margin: 20px 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  list-style: none;
+  color: #FFF;
+  text-align: right;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer__partner {
+  margin: 0 20px 0 0;
+}
+
+.footer__partner:hover {
+  opacity: 0.699999988079071;
+  transition: 0.5s;
+}
+
+.footer__partner:last-child {
+  margin: 0;
+}
+
+.footer__link {
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__project {
+    width: 92%;
+  }
+
+  .footer__copyright {
+    width: 30%;
+    margin: 20px 0;
+    color: #FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .footer__partners {
+    width: 62%;
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    list-style: none;
+    color: #FFF;
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px;
+  }
+
+  .footer__project {
+    width: 94%;
+    padding-bottom: 22px;
+    font-size: 12px;
+  }
+
+  .footer__copyright {
+    order: 2;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+  .footer__partners {
+    order: 1;
+    width: 100%;
+    margin: 30px 0;
+    padding: 0;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .footer__partner {
+    margin: 0 0 12px 0;
+  }
+}

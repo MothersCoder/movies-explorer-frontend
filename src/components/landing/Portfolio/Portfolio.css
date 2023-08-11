@@ -1,0 +1,126 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #202020;
+}
+
+.portfolio__title {
+  width: 91%;
+  margin: 101px 0 50px 0;
+  color: #8B8B8B;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  min-width: 250px;
+}
+
+.portfolio__works {
+  width: 91%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio__item {
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 9px;
+  padding-right: 2px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.portfolio__item:last-child {
+  margin-bottom: 125px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.portfolio__arrow {
+  margin: 0;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+}
+
+.portfolio__link {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.portfolio__link:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio__title {
+    width: 87%;
+    margin: 90px 0 48px 0;
+  }
+
+  .portfolio__works {
+    width: 87%;
+  }
+  .portfolio__item {
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: -1.12px;
+  }
+
+  .portfolio__arrow {
+    font-size: 28px;
+    margin-right: 1px;
+  }
+
+  .portfolio__item:last-child {
+    margin-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .portfolio__item {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .portfolio__title {
+    width: 91%;
+    margin: 70px 0 41px 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .portfolio__works {
+    width: 91%;
+  }
+  .portfolio__item {
+    height: 40px;
+    font-size: 18px;;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+    padding-bottom: 7px;
+  }
+
+  .portfolio__item:last-child {
+    margin-bottom: 90px;
+  }
+
+  .portfolio__arrow {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+}

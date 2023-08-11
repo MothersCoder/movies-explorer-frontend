@@ -1,0 +1,126 @@
+.card-list__card {
+  max-width: 364px;
+  max-height: 281px;
+  border-radius: 6px;
+  background: #222;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+  margin: 0 0 13px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-list__card-img {
+  width: 364px;
+  background-size: cover;
+}
+
+.card-list__card-title {
+  margin: 16px 0 17px 16px;
+  width: 75%;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-list__card-like {
+  background: none;
+  background-image: url('../../images/like.svg');
+  border: none;
+  margin-right: 16px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.card-list__card-like:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.card-list__card-like:active {
+  opacity: 1;
+  background-image: url('../../images/like-active.svg');
+}
+
+.card-list__card-duration {
+  width: 100%;
+  margin: 0 0 16px 16px;
+  color: #8B8B8B;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card-list__card-delete {
+  display: none;
+  background: none;
+  background-image: url('../../images/card-delete.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  margin-right: 16px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.card-list__card:hover .card-list__card-delete {
+  display: block;
+}
+
+@media screen and (max-width: 850px) {
+  .card-list__card {
+    max-width: 339px;
+    max-height: 262px;
+    margin: 0;
+  }
+
+  .card-list__card-img {
+    width: 339px;
+    background-size: contain;
+  }
+
+  .card-list__card-title {
+    margin: 15px 0 15px 14px;
+  }
+
+  .card-list__card-like {
+    margin-right: 14px;
+  }
+
+  .card-list__card-duration {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .card-list__card {
+    max-width: 300px;
+    max-height: 237px;
+  }
+
+  .card-list__card-img {
+    width: 300px;
+  }
+
+  .card-list__card-title {
+    margin: 14px 0 14px 14px;
+    font-size: 12px;
+  }
+
+  .card-list__card-like {
+    margin-right: 10px;
+  }
+
+  .card-list__card-duration {
+    margin-left: 15px;
+    font-size: 10px;
+  }
+}
