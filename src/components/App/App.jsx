@@ -12,6 +12,7 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
+import Header from '../Header/Header';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -32,11 +33,12 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <div className="app">
+          <Header
+            loggedIn={loggedIn}
+          />
           <Routes>
             <Route path="/" element={
-              <Main
-                loggedIn={loggedIn}
-              />
+              <Main />
               }
             />
 

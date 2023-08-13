@@ -31,6 +31,12 @@
   margin: 0 6px 0 0;
   justify-self: flex-end;
   background: url("../../images/find-button.svg") 100%;
+  cursor: pointer;
+}
+
+.search-form__submit:hover {
+  opacity: 0.8;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 768px) {

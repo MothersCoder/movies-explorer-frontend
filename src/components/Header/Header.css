@@ -6,10 +6,36 @@
   justify-content: space-between;
 }
 
+.header_page_main {
+  background-color: #073042;
+}
+
+.header_page_movies {
+  background-color: #202020;
+}
+
+.header_page_saved-movies {
+  background-color: #202020;
+}
+
+.header_page_profile {
+  background-color: #202020;
+}
+
+.header_page_sign {
+  background-color: #202020;
+  max-width: 396px;
+}
+
 .header__link {
   text-decoration: none;
   margin: 0;
   color: #FFF;
+}
+
+.header__link:hover {
+  opacity: 0.8;
+  transition: 0.5s;
 }
 
 .header__logo {
@@ -23,20 +49,23 @@
   margin-top: 70px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .header__logo {
     margin-left: 30px;
   }
 
   .header__logo_sign {
+    margin-top: 232px;
     margin-left: 0;
   }
+
 }
 
-@media screen and (max-width: 440px){
-  .header_sign {
+@media screen and (max-width: 440px) {
+  .header_page_sign {
     justify-content: center;
   }
+
   .header__logo {
     margin-left: 14px;
   }

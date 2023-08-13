@@ -1,27 +1,22 @@
 import { useState } from "react";
-import Header from "../Header/Header";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
 import SearchForm from "../SearchForm/SearchForm";
+import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function Movies (props) {
   const [isLoaded, setIsLoaded] = useState(false)
   return (
-    <>
-    <div className="movies">
-      <div className="movies__header">
-        <Header
-          loggedIn={props.loggedIn}
+    <div className="main">
+      <section className="movies">
+        {isLoaded ? <Preloader /> : ""}
+        <SearchForm />
+        <FilterCheckbox />
+        <MoviesCardList
+          cards={props.allCards}
         />
-      </div>
-      <SearchForm />
-      <MoviesCardList
-        cards={props.allCards}
-      />
+      </section>
     </div>
-
-    {isLoaded ? <Preloader /> : null}
-    </>
   )
 }
 

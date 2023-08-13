@@ -24,6 +24,7 @@
 
 .not-found__link {
   margin-top: 168px;
+  margin-bottom: 60px;
   text-decoration: none;
   color: #4285F4;
   font-size: 14px;;
@@ -34,6 +35,10 @@
 @media screen and (max-width: 768px) {
   .not-found__title {
     padding-top: 407px;
+  }
+
+  .not-found__link {
+    margin-bottom: 222px;
   }
 }
 
@@ -50,6 +55,7 @@
 
   .not-found__link {
     margin-top: 272px;
+    margin-bottom: 30px;
     font-size: 12px;
   }
 

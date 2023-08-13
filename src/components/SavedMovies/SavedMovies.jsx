@@ -1,19 +1,17 @@
-import Header from "../Header/Header";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
+import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function SavedMovies (props) {
   return (
-    <div className="saved-movies">
-      <div className="saved-movies__header">
-        <Header
-          loggedIn={props.loggedIn}
+    <div className="main">
+      <section className="saved-movies">
+        <SearchForm />
+        <FilterCheckbox />
+        <MoviesCardList
+          cards={props.likedCards}
         />
-      </div>
-      <SearchForm />
-      <MoviesCardList
-        cards={props.likedCards}
-      />
+      </section>
     </div>
   )
 }
