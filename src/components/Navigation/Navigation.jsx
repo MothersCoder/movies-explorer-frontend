@@ -14,8 +14,7 @@ function Navigation (props) {
   }
 
   return (
-    <>
-      <div className="navigation">
+      <section className="navigation">
         <div className={`navigation__container ${currentUrl.pathname === '/' ? navidationLandingStyle : 'navigation__container_main'}`}>
           {
             props.loggedIn ? (
@@ -27,14 +26,14 @@ function Navigation (props) {
                 <Link className="navigation__link" to="/profile">
                   {currentUrl.pathname === '/' ? (
                     <button className="navigation__button-landing">
-                      <img className="button-landing__icon" src={profileImgButtonLanding} alt="Иконка человека" />
+                      <img className="navigation__landing-icon" src={profileImgButtonLanding} alt="Иконка человека" />
                       Аккаунт
                     </button>
                   ) : (
                     <button className="navigation__button-main">
-                      <p className="button-main__name">Аккаунт</p>
-                      <div className="button-main__icon-background">
-                        <img className="button-main__icon" src={profileImgButtonMain} alt="Иконка человека" />
+                      <p className="navigation__main-name">Аккаунт</p>
+                      <div className="navigation__icon-background">
+                        <img className="navigation__main-icon" src={profileImgButtonMain} alt="Иконка человека" />
                       </div>
                     </button>
                   )}
@@ -53,31 +52,30 @@ function Navigation (props) {
           <button type="button" className={`navigation__burger ${isMenuOpen ? 'navigation__burger_active' : ''}`} aria-label="Меню" onClick={toggleMenu}></button>
         ) : ""}
 
-      </div>
-      <div className={`navigation__menu ${isMenuOpen ? 'navigation__menu_open' : ''}`}>
-        <ul className={`navigation__navbar ${currentUrl.pathname === '/' ? 'navigation__navbar_landing' : 'navigation__navbar_main'}`}>
-          <li className={`navigation__navbar-item ${currentUrl.pathname === '/' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/">Главная</NavLink></li>
-          <li className={`navigation__navbar-item ${currentUrl.pathname === '/movies' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/movies">Фильмы</NavLink></li>
-          <li className={`navigation__navbar-item ${currentUrl.pathname === '/saved-movies' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/saved-movies">Сохраненные фильмы</NavLink></li>
-        </ul>
-        <Link className="navigation__link" to="/profile">
-          {currentUrl.pathname === '/' ? (
-            <button className="navigation__button-landing">
-              <img className="button-landing__icon" src={profileImgButtonLanding} alt="Иконка человека" />
-              Аккаунт
-            </button>
-            ) : (
-            <button className="navigation__button-main">
-              <p className="button-main__name">Аккаунт</p>
-              <div className="button-main__icon-background">
-                <img className="button-main__icon" src={profileImgButtonMain} alt="Иконка человека" />
-              </div>
-            </button>
-          )}
-        </Link>
-      </div>
 
-    </>
+        <div className={`navigation__menu ${isMenuOpen ? 'navigation__menu_open' : ''}`}>
+          <ul className={`navigation__navbar ${currentUrl.pathname === '/' ? 'navigation__navbar_landing' : 'navigation__navbar_main'}`}>
+            <li className={`navigation__navbar-item ${currentUrl.pathname === '/' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/">Главная</NavLink></li>
+            <li className={`navigation__navbar-item ${currentUrl.pathname === '/movies' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/movies">Фильмы</NavLink></li>
+            <li className={`navigation__navbar-item ${currentUrl.pathname === '/saved-movies' ? 'navigation__navbar-item_active' : ""}`}><NavLink className="navigation__link" to="/saved-movies">Сохраненные фильмы</NavLink></li>
+          </ul>
+          <Link className="navigation__link" to="/profile">
+            {currentUrl.pathname === '/' ? (
+              <button className="navigation__button-landing">
+                <img className="navigation__landing-icon" src={profileImgButtonLanding} alt="Иконка человека" />
+                Аккаунт
+              </button>
+              ) : (
+              <button className="navigation__button-main">
+                <p className="navigation__main-name">Аккаунт</p>
+                <div className="navigation__icon-background">
+                  <img className="navigation__main-icon" src={profileImgButtonMain} alt="Иконка человека" />
+                </div>
+              </button>
+            )}
+          </Link>
+        </div>
+      </section>
   )
 }
 

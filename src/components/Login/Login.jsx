@@ -8,7 +8,7 @@ function Login () {
     password: ''
   })
   return (
-    <div className="main">
+    <main className="main">
       <section className="login">
         <h2 className="login__title">Рады видеть!</h2>
         <form className="login__form">
@@ -25,7 +25,7 @@ function Login () {
         </form>
         <p className="login__assumption">Еще не зарегистрированы?<Link className="login__link" to="/signup">Регистрация</Link></p>
       </section>
-    </div>
+    </main>
   )
 }
 

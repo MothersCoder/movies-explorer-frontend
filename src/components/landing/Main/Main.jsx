@@ -7,14 +7,14 @@ import Techs from '../Techs/Techs';
 
 function Main () {
   return (
-    <div className="main">
+    <main className="main">
         <Promo />
         <NavTab />
         <AboutProject />
         <Techs />
         <AboutMe />
         <Portfolio />
-    </div>
+    </main>
   )
 }
 

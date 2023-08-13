@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import Header from "../Header/Header"
 import { useState } from "react";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
@@ -15,7 +14,7 @@ function Register () {
     setError(true);
   }
   return (
-    <div className="main">
+    <main className="main">
       <section className="register">
         <h2 className="register__title">Добро пожаловать!</h2>
         <form className="register__form" onSubmit={showError}>
@@ -35,7 +34,7 @@ function Register () {
         </form>
         <p className="register__assumption">Уже зарегистрированы? <Link className="register__link" to="/signin">Войти</Link></p>
       </section>
-    </div>
+    </main>
   )
 }
 

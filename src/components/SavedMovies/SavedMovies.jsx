@@ -4,7 +4,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function SavedMovies (props) {
   return (
-    <div className="main">
+    <main className="main">
       <section className="saved-movies">
         <SearchForm />
         <FilterCheckbox />
@@ -12,7 +12,7 @@ function SavedMovies (props) {
           cards={props.likedCards}
         />
       </section>
-    </div>
+    </main>
   )
 }
 

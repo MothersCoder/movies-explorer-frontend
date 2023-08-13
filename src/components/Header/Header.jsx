@@ -15,7 +15,7 @@ function Header (props) {
 
   return (
     <header className={`header ${pageStyleModificator}`}>
-      <a className="header__link" href="/"><img className={`header__logo ${currentUrl.pathname !== "/signup" && currentUrl.pathname !== "/signin" ? "" : 'header__logo_sign'}`} src={logo} alt="Позитивный логотим сайта про меня :) "/></a>
+      <a className="header__link" href="/"><img className={`header__logo ${currentUrl.pathname !== "/signup" && currentUrl.pathname !== "/signin" ? "" : 'header__logo_sign'}`} src={logo} alt="Позитивный логотип сайта про меня :) "/></a>
       {
         currentUrl.pathname !== "/signup" && currentUrl.pathname !== "/signin" ?
           <Navigation

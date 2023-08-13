@@ -25,7 +25,7 @@ function Profile (props) {
   }, [props.user]);
 
   return (
-    <div className="main">
+    <main className="main">
       <section className="profile">
         <h2 className="profile__title">Привет, {props.user.name}!</h2>
         <form className="profile__form">
@@ -46,7 +46,7 @@ function Profile (props) {
         <button className={`profile__edit ${isEditableForm && 'profile__edit_hide'}`} onClick={openEditForm}>Редактировать</button>
         <button className={`profile__exit ${isEditableForm && 'profile__exit_hide'}`}>Выйти из аккаунта</button>
       </section>
-    </div>
+    </main>
   )
 }
 

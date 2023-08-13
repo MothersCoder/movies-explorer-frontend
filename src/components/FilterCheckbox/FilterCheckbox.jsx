@@ -1,10 +1,10 @@
 function FilterCheckbox () {
 
   return (
-    <div className="filter">
+    <section className="filter">
         <input className="checkbox" type="checkbox" defaultChecked/>
       <p className="filter__text">Короткометражки</p>
-    </div>
+    </section>
   )
 }
 

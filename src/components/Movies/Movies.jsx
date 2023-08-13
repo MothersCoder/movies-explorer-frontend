@@ -7,7 +7,7 @@ import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 function Movies (props) {
   const [isLoaded, setIsLoaded] = useState(false)
   return (
-    <div className="main">
+    <main className="main">
       <section className="movies">
         {isLoaded ? <Preloader /> : ""}
         <SearchForm />
@@ -16,7 +16,7 @@ function Movies (props) {
           cards={props.allCards}
         />
       </section>
-    </div>
+    </main>
   )
 }
 

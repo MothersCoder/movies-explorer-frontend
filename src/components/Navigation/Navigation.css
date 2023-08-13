@@ -176,13 +176,13 @@
   line-height: 16px;
 }
 
-.button-landing__icon {
+.navigation__landing-icon {
   width: 12px;
   height: 14px;
   margin: auto 8px auto 0;
 }
 
-.button-main__icon-background {
+.navigation__icon-background {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,14 +193,14 @@
   border-radius: 50px;
 }
 
-.button-main__icon {
+.navigation__main-icon {
   width: 10.4px;
   height: 10.7px;
   background-color: #313131;
   border-radius: 50px;
 }
 
-.button-main__name {
+.navigation__main-name {
   margin: 0 2px 0;
 }
 
@@ -239,7 +239,7 @@
   }
 
   .navigation__menu_open {
-    position: absolute;
+    position: fixed;
     justify-content: space-between;
     top:0;
     right: 0;
@@ -310,11 +310,11 @@
     text-align: right;
   }
 
-  .button-main__icon-background {
+  .navigation__icon-background {
     margin-left: 0;
   }
 
-  .button-main__name {
+  .navigation__main-name {
     margin: 0 8px 0;
   }
 
