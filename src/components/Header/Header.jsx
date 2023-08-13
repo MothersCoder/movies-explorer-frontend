@@ -10,7 +10,8 @@ function Header (props) {
     currentUrl.pathname === "/movies" ? 'header_page_movies' :
     currentUrl.pathname === "/saved-movies" ? 'header_page_saved-movies':
     currentUrl.pathname === "/profile" ? 'header_page_profile':
-    currentUrl.pathname !== "/signup" && currentUrl.pathname !== "/signin" ? "" : 'header_page_sign';    ;
+    currentUrl.pathname === "/404" ? 'header_page_not-found':
+    currentUrl.pathname !== "/signup" && currentUrl.pathname !== "/signin" ? "" : 'header_page_sign';
 
   return (
     <header className={`header ${pageStyleModificator}`}>

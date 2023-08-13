@@ -22,6 +22,10 @@
   background-color: #202020;
 }
 
+.header_page_not-found {
+  display: none;
+}
+
 .header_page_sign {
   background-color: #202020;
   max-width: 396px;
