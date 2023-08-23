@@ -3,18 +3,19 @@ import { useFormAndValidation } from '../../hooks/useFormAndValidation'
 
 function Profile (props) {
   const [isEditableForm, setIsEditableForm] = useState(false);
-  const [isServerError, setServerError] = useState(false)
   const formInputs = useFormAndValidation({
-    name: '',
-    email: ''
+    name: props.user.name,
+    email: props.user.email
   });
 
   function openEditForm () {
     setIsEditableForm(true)
   };
 
-  function checkServerError () {
-    setServerError(true)
+  function handleSubmit (e) {
+    e.preventDefault();
+    props.updateUserData(e, formInputs.values);
+    formInputs.setIsvalid(false);
   }
 
   useEffect(() => {
@@ -41,10 +42,10 @@ function Profile (props) {
           </label>
         </form>
 
-        <span className="profile__server-error">{isServerError && 'При обновлении профиля произошла ошибка.'}</span>
-        <button  type="submit" className={`profile__save ${isEditableForm && 'profile__save_active'} ${!formInputs.isValid && 'profile__save_disable'} ${isServerError && 'profile__save_disable'}`} disabled={formInputs.isValid ? false : true} onClick={checkServerError}>Сохранить</button>
-        <button className={`profile__edit ${isEditableForm && 'profile__edit_hide'}`} onClick={openEditForm}>Редактировать</button>
-        <button className={`profile__exit ${isEditableForm && 'profile__exit_hide'}`}>Выйти из аккаунта</button>
+        <span className="profile__server-error">{props.serverError ? props.serverError : ''}</span>
+        <button type="submit" onClick={handleSubmit} className={`profile__save ${isEditableForm ? 'profile__save_active' : ''} ${!formInputs.isValid ? 'profile__save_disable' : ''} ${props.serverError ? 'profile__save_disable' : ''}`} disabled={formInputs.isValid ? false : true}>Сохранить</button>
+        <button type="button" className={`profile__edit ${isEditableForm ? 'profile__edit_hide' : ''}`} onClick={openEditForm}>Редактировать</button>
+        <button type="button" className={`profile__exit ${isEditableForm ? 'profile__exit_hide' : ''}`} onClick={props.logout}>Выйти из аккаунта</button>
       </section>
     </main>
   )

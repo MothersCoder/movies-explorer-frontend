@@ -1,13 +1,33 @@
 .search-form {
   margin: 57px auto 0;
   width: 89.07%;
-  border-radius: 40px;
-  background: #2F2F2F;
   flex-shrink: 0;
   position: relative;
   display: flex;
+  flex-direction: column;
+}
+
+.search-form__form {
+  border-radius: 40px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #2F2F2F;
+  width: 100%;
+}
+
+.search-form__err {
+  margin: 12px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 14px;
+  text-align: right;
+  padding: 0;
+  color: #FF004C;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .search-form__input {

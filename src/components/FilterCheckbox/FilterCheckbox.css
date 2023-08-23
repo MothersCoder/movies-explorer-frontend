@@ -1,7 +1,7 @@
 .filter {
   width: 89.07%;
-  margin: 28px auto 0;
-  padding-bottom: 56px;
+  margin: 0 auto 0;
+  padding-bottom: 69px;
   border-bottom: 1px solid #424242;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .filter__text {
-  margin-left: 12px;
+  margin: 0 0 0 12px;
   color: #FFF;
   font-size: 14px;
   font-weight: 400;
