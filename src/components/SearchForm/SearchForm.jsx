@@ -16,7 +16,7 @@ function SearchForm (props) {
         <input className="search-form__input" name="searchWords" value={formInputs.values.searchWords} onChange={formInputs.handleChange} placeholder="Фильм"/>
         <input className="search-form__submit" onClick={handleClick}/>
       </form>
-      <p className="search-form__err">{props.searchedMovies === null ? 'По вашему запросу ничего не найдено :( Попробуйте уточнить запрос и повторить поиск' : props.queryError ? 'Введите название фильма, ну или хотя бы его фрагмент' : ''}</p>
+      <p className="search-form__err">{props.searchedMovies === [] ? 'По вашему запросу ничего не найдено :( Попробуйте уточнить запрос и повторить поиск' : props.queryError ? 'Введите название фильма, ну или хотя бы его фрагмент' : ''}</p>
     </section>
   )
 }
