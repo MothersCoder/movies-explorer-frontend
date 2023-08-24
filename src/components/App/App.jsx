@@ -40,7 +40,8 @@ function App() {
   const [likedMovies, setLikedMovies] = useState([]);
   const [getLikedMoviesErr, setGetLikedMoviesErr] = useState();
 
-  const [queryError, setQueryError] = useState(false)
+  const [queryError, setQueryError] = useState(false);
+  const [queryErrorLike, setQueryErrorLike] = useState(false);
 
   const storageConstants = {
     searchQuery: localStorage.getItem('searchQuery'),
@@ -176,11 +177,18 @@ function App() {
     if (filter.length > 0) {
       setSearchedMovies(JSON.parse(localStorage.getItem('searchedMovies')));
     } else {
-      setSearchedMovies(null);
+      setSearchedMovies(undefined);
+      return
     }
   }
 
   function handleGetLikedMoviesClick (searchQuery) {
+    if (searchQuery === '') {
+      setQueryErrorLike(true);
+      setLikedMovies([]);
+      return
+    }
+    setQueryErrorLike(false)
     const filter = likedMovies.filter(function (movie) {
       return movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) || movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
     });
@@ -191,7 +199,8 @@ function App() {
     if (filter.length > 0) {
       setLikedMovies(JSON.parse(localStorage.getItem('searchedMoviesLike')));
     } else {
-      setLikedMovies(null);
+      setLikedMovies(undefined);
+      return
     }
   }
 
@@ -308,10 +317,11 @@ function App() {
                 likedCards={likedMovies}
                 delete={handleDeleteLikeClick}
                 onSubmit={handleGetLikedMoviesClick}
-
+                queryError={queryErrorLike}
                 onChecked={filterActiveToggle}
                 status={isFilterActive}
                 sortMovies={sortMovies}
+
               />
             } />
 

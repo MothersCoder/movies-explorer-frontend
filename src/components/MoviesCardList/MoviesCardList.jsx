@@ -49,7 +49,7 @@ function MoviesCardList (props) {
 
   function render () {
     return (
-      filmList !== null ?
+      filmList !== null && filmList !== undefined ?
       filmList.slice(0, filmQuantityLoad).map((card) => (
         <MoviesCard data={card} key={card.id || card._id} like={props.like} delete={props.delete} likedCards={props.likedCards} allMovies={props.searchedMovies}/>
       ))
@@ -59,7 +59,7 @@ function MoviesCardList (props) {
 
   function hide () {
     return (
-      filmList === null ?
+      filmList === null || filmList === undefined ?
       "card-list__more-button_hide" :
       filmList.length <= filmQuantityLoad ? "card-list__more-button_hide" : ""
     )

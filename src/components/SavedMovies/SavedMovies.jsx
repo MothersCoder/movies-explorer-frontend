@@ -11,6 +11,8 @@ function SavedMovies (props) {
           onSubmit={props.onSubmit}
           searchQuery={props.searchQuery}
           searchedMovies={props.searchedMovies}
+          queryError={props.queryError}
+          likedCards={props.likedCards}
         />
         <FilterCheckbox
           onChecked={props.onChecked}
