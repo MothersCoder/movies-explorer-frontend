@@ -53,7 +53,6 @@ function App() {
     searchedMovies: (JSON.parse(localStorage.getItem('searchedMovies'))),
     filterActive: (JSON.parse(localStorage.getItem('filterStatus'))),
     sortMovies: (JSON.parse(localStorage.getItem('sortedMovies'))),
-    likedMovies: (JSON.parse(localStorage.getItem('likedMovies')))
   }
 
   const login = (email, password) => {
@@ -89,6 +88,24 @@ function App() {
     getLikedFilms();
   }, [])
 
+  function tokenCheck () {
+    api
+      .getUserData()
+      .then((res) => {
+        if(res) {
+          setLoggedIn(true);
+          setCurrentUser(res);
+        } else {
+          setLoggedIn(false);
+        }
+      })
+      .catch((err) => {
+        setGetUserDataError(err);
+        console.log(getUserDataError);
+        setLoggedIn(false);
+      })
+  }
+
   function handleSignUpClick (e, data) {
     e.preventDefault();
     api
@@ -111,36 +128,16 @@ function App() {
       .catch((err) => setGetMoviesError(err))
   }
 
-  function getLikedFilms () {
+  async function getLikedFilms () {
     setIsLoading(true);
-    api
-      .getLikedFilms ()
+    api.getLikedFilms ()
       .then((likeMovies) => {
-        const userList = likeMovies.filter((card) => card.owner === currentUser._id);
-        setLikedMovies(userList);
+        setLikedMovies(likeMovies);
       })
       .finally(() => setIsLoading(false))
       .catch((err) => {
         setGetLikedMoviesErr(err);
         console.log(getLikedMoviesErr);
-      })
-  }
-
-  function tokenCheck () {
-    api
-      .getUserData()
-      .then((res) => {
-        if(res) {
-          setLoggedIn(true);
-          setCurrentUser(res);
-        } else {
-          setLoggedIn(false);
-        }
-      })
-      .catch((err) => {
-        setGetUserDataError(err);
-        console.log(getUserDataError);
-        setLoggedIn(false);
       })
   }
 
@@ -180,7 +177,7 @@ function App() {
       return
     }
     setQueryError(false)
-    const filter = storageConstants.movies.filter(function (movie) {
+    let filter = storageConstants.movies.filter(function (movie) {
       return (
         movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
         movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
@@ -199,14 +196,13 @@ function App() {
   }
 
   function handleGetLikedMoviesClick (searchQuery) {
-    if (searchQuery === '' || likedMovies === '') {
+    if (searchQuery === '' || likedMovies === '' || likedMovies === undefined || likedMovies === null) {
       setQueryErrorLike(true);
-      setLikedMovies([]);
       return
     }
 
     setQueryErrorLike(false)
-    const filter = likedMovies.filter(function (movie) {
+    let filter = likedMovies.filter(function (movie) {
       return (
         movie.nameRU.toLowerCase().includes(searchQuery.toLowerCase()) ||
         movie.nameEN.toLowerCase().includes(searchQuery.toLowerCase())
@@ -236,7 +232,7 @@ function App() {
       }
 
       if(movieList.length > 0) {
-        const sort = movieList.filter(function (movie) {
+        let sort = movieList.filter(function (movie) {
           return movie.duration <= 40
         });
 
@@ -289,13 +285,11 @@ function App() {
   function handleLikeClick (card) {
     api
       .likeFilm(card)
-      .then((res) => {
-        card._id = res._id;
+      .then(() => {
         return api.getLikedFilms()
       })
       .then((newCards) => {
-        const userList = newCards.filter((card) => card.owner === currentUser._id);
-        localStorage.setItem('like', JSON.stringify(userList));
+        localStorage.setItem('like', JSON.stringify(newCards));
         setLikedMovies(JSON.parse(localStorage.getItem('like')));
       })
       .catch((err) => console.log(err))
@@ -308,11 +302,12 @@ function App() {
         return api.getLikedFilms();
       })
       .then((fullList) => {
-        const newList = fullList.filter((card) => card._id !== cardId);
-        setLikedMovies(newList);
+        localStorage.setItem('like', JSON.stringify(fullList));
+        setLikedMovies(JSON.parse(localStorage.getItem('like')));
       })
       .catch((err) => {
         setLikedMovies([]);
+        localStorage.removeItem('like')
         console.log(err);
       })
   }
