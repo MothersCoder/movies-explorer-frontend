@@ -73,7 +73,7 @@
   text-decoration: none;
 }
 
-.navigation__navbar-item_active {
+.navigation__link_active {
   border-bottom: 1px solid #FFF;
   padding: 8px 0;
 }
