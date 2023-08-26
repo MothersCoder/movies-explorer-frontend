@@ -4,7 +4,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 
 function Movies (props) {
-
   return (
     <main className="main">
       <section className="movies">
@@ -32,7 +31,7 @@ function Movies (props) {
         />
       </section>
     </main>
-  )
+  );
 }
 
 export default Movies;

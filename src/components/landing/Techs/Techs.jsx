@@ -5,7 +5,9 @@ function Techs () {
       <h2 className="techs__title">Технологии</h2>
       <div className="techs__keypoints">
         <h3 className="techs__keypoints-title">7 технологий</h3>
-        <p className="techs__keypoints-text">На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.</p>
+        <p className="techs__keypoints-text">
+          На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.
+        </p>
       </div>
       <ul className="techs__techs">
         <li className="techs__techs-item">HTML</li>
@@ -17,7 +19,7 @@ function Techs () {
         <li className="techs__techs-item">mongoDB</li>
       </ul>
     </section>
-  )
+  );
 }
 
 export  default Techs;

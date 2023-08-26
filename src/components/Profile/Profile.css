@@ -76,13 +76,20 @@
   min-height: 100px;
 }
 
-.profile__server-error {
+.profile__server-response {
   min-height: 14px;
-  color: #FF004C;
   text-align: center;
   font-size: 11px;
   font-weight: 400;
   line-height: normal;
+}
+
+.profile__server-response_err {
+  color: #FF004C;
+}
+
+.profile__server-response_confirm {
+  color: #3DDC84;
 }
 
 .profile__edit {

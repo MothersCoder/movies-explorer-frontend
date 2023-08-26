@@ -29,7 +29,7 @@ function SavedMovies (props) {
         />
       </section>
     </main>
-  )
+  );
 }
 
 export default SavedMovies;
